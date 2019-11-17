@@ -77,7 +77,7 @@ function getRate() {
     var parcelType = req.query.parcel_type;
     var weight = req.query.weight;
 
-    var baseType = getBaseType(parcelType);
+    var baseType = getType(parcelType);
     var price = 0;
     switch (baseType) {
         case 1:
@@ -93,8 +93,8 @@ function getRate() {
             price = getPackagePrice(weight);
     }
 
-    var exports = { weight: weight, parcelType: parcelType, price: price };
-    res.render('show_price', exports);
+   // var exports = { weight: weight, parcelType: parcelType, price: price };
+    //res.render('show_rate', exports);
 
 }
 
