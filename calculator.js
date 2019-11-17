@@ -93,8 +93,8 @@ function getRate() {
             price = getPackagePrice(weight);
     }
 
-   // var exports = { weight: weight, parcelType: parcelType, price: price };
-    //res.render('show_rate', exports);
+    var exports = { weight: weight, parcelType: parcelType, price: price };
+    res.render('show_rate', exports);
 
 }
 
