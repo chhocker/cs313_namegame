@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <h1>Shipping rate:</h1>
+    <h1>Your Postal Shipping Rate</h1>
     
     <p>Your parcel type: <%= parcelType.toLowerCase().replace(/_/g, ' '); %></p>
     <p>Weight of your parcel: <%= weight %> </p>
-    <h2>Total rate for your parcel: $<%= price %></h2>
+    <h2>Total rate for your parcel: $<%= price.toFixed(2) %></h2>
     <button><a href="/">Get another rate</a></button>
 </body>
 
