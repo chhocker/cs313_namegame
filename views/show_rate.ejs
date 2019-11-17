@@ -9,11 +9,12 @@
 </head>
 
 <body>
-    <h1>Results</h1>
-    <p>Weight: <%= weight %> </p>
-    <p>Parcel type: <%= parcelType %></p>
-    <h2>Price: <%= price %></h2>
-    <button><a href="/">Play Again</a></button>
+    <h1>Shipping rate:</h1>
+    
+    <p>Your parcel type: <%= parcelType.toLowerCase().replace(/_/g, ' '); %></p>
+    <p>Weight of your parcel: <%= weight %> </p>
+    <h2>Total rate for your parcel: $<%= price %></h2>
+    <button><a href="/">Get another rate</a></button>
 </body>
 
 </html>
