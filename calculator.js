@@ -4,7 +4,7 @@ function getType(type) {
         return 1;
     else if (type == "metered_letter")
         return 2;
-    else if (type == "large_envelope")
+    else if (type == "large_flat_envelope")
         return 3;
     else
         return 4;
