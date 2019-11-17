@@ -73,7 +73,7 @@ function getPackagePrice(weight) {
         return 5.71;
 }
 
-function getRate() {
+function getRate(req, res) {
     var parcelType = req.query.parcel_type;
     var weight = req.query.weight;
 
