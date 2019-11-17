@@ -6,26 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Postal Rate Calculator</title>
+    <link rel="stylesheet" type="text/css" href="../css/simple.css">
+
 </head>
 
 <body>
     <h1>Postal Rate Calculator</h1>
-    <p>Sending a letter, card, or package? Enter the weight and type of parcel below and
+    <p>Sending a letter, card, or package? Enter the weight (in ounces) and type of parcel below and
         the price will be calculated for you.
     </p>
     <form action="/calculator" method='get'>
         <label>Enter the weight:</label>
         <input type="text" name="weight">ounces
-        <br/>
-        <br/>
+        <br />
+        <br />
         <select name="parcel_type">
             <option value="stamped_letters">Stamped Letter</option>
             <option value="metered_letter">Metered Letter</option>
             <option value="large_flat_envelope">Large, Flat Envelope</option>
             <option value="first_class_package">First-Class Package Service</option>
         </select>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <input type="submit" value="Get Shipping Rate">
     </form>
 </body>
