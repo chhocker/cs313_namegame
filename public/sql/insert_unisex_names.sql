@@ -1,10 +1,10 @@
-INSERT INTO girl_names (
-      name
-    , meaning
-    , origin
+INSERT INTO insert_unisex_names (
+      girl_name_id
+    , boy_name_id
+    , name
 )
 VALUES (
-      'Name'
-    , 'Dunno'
-    , 'England'
+      1
+    , 1
+    , 'unisex_name'
 );
