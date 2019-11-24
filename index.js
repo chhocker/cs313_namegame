@@ -2,6 +2,9 @@ const express = require('express');
 var app = express();
 var calculator = require('./calculator.js');
 
+var router = express.Router();
+
+
 app.set('port', process.env.PORT || 5000)
     .use(express.static(__dirname + '/public'))
     .set('views', __dirname + '/views')
@@ -9,7 +12,22 @@ app.set('port', process.env.PORT || 5000)
     .get('/', function (req, res) {
         res.sendFile('form.html', { root: __dirname + '/public' });
     })
+    .get('/girlnames', function (req, res, next) {
+        pg.connect(conString, function (err, client, done) {
+            if (err) {
+                return console.error('error fetching client from pool', err);
+            }
+            console.log("connected to database");
+            client.query('SELECT * FROM girl_names', function (err, result) {
+                done();
+                if (err) {
+                    return console.error('error running query', err);
+                }
+                res.send(result);
+            });
+        });
+    })
     .get('/calculator', calculator.getRate)
-    .listen(app.get('port'), function() {
+    .listen(app.get('port'), function () {
         console.log('Listening on port: ' + app.get('port'));
     });

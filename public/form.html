@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Postal Rate Calculator</title>
-    <link rel="stylesheet" type="text/css" href="../css/simple.css">
+    <link rel="stylesheet" type="text/css" href="/css/simple.css">
 </head>
 
 <body>
-    <h1>Postal Rate Calculator</h1>
-    <p>Sending a letter, card, or package? Enter the weight (in ounces) and type of parcel below and
-        the price will be calculated for you.
+    <h1>Choose a Baby Name!</h1>
+    <p>What should you expect when you're expecting? A whole lot of decisions! One of the most important: what will
+        your baby be named? Choose an option to get started!
     </p>
     <form action="/calculator" method='get'>
-        <label>Enter the weight:</label>
-        <input type="text" name="weight">ounces
+        <label>The baby's last name:</label>
+        <input type="text" name="last_name">
         <br />
         <br />
-        <select name="parcel_type">
-            <option value="stamped_letters">Stamped Letter</option>
-            <option value="metered_letter">Metered Letter</option>
-            <option value="large_flat_envelope">Large, Flat Envelope</option>
-            <option value="first_class_package">First-Class Package Service</option>
+        <select name="name_type">
+            <option value="girl_name">Girl Name</option>
+            <option value="boy_name">Boy Name</option>
+            <option value="unisex_name">Unisex Name</option>
         </select>
         <br />
         <br />

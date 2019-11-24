@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node index.js"
+    "start": "node index.js"
   },
   "author": "Claire Hocker",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.7.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^7.14.0"
   }
 }
