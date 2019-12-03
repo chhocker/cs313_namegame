@@ -1,12 +1,15 @@
 const express = require('express');
 const { Pool } = require('pg');
-const pg = new Pool();
+const connectionString = {
+    connectionString:(process.env.DATABASE_URL 
+        || 'postgres://zxcuebqralxfwx:cf708391869ae04dc229c2f1f6eb4554a988f676b3f83835fe1f91655852b0a5@ec2-54-225-195-3.compute-1.amazonaws.com:5432/d8tv2cfd39g9i5'),
+    ssl: true
+    };
 
 var app = express();
-
-pg.on('error', (err, client) => {
-  console.error('Unexpected error on idle client', err)
-  process.exit(-1)
+const pool = new Pool({
+    connectionString
+        : connectionString
 });
 
 app.set('port', process.env.PORT || 5000)
@@ -16,22 +19,11 @@ app.set('port', process.env.PORT || 5000)
     .get('/', function (req, res) {
         res.sendFile('form.html', { root: __dirname + '/public' });
     })
-    .get('/display_names', function (req, res, next) {
-        pg.connect(conString, function (err, client, done) {
-            if (err) {
-                return console.error('error fetching client from pool', err);
-            }
-            console.log("connected to database");
-            client.query('SELECT * FROM ' + req.query.name_type, function (err, result) {
-                done();
-                if (err) {
-                    return console.error('error running query', err);
-                }
-                res.send(result);
-                client.release();
+    .get('/display_names', function (req, res) {
+        pool.on('connect', () => console.log('connected to db'));
+        console.log(req.query.name_type);
+            //res.send(result);
 
-            });
-        });
     })
     .listen(app.get('port'), function () {
         console.log('Listening on port: ' + app.get('port'));
