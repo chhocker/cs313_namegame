@@ -16,18 +16,31 @@ app.set('port', PORT)
     .get('/', function (req, res) {
         res.sendFile('form.html', { root: __dirname + '/public' });
     })
-    .get('/display_names', async (req, res) => {
-        try {
-          const client = await pool.connect()
-          const result = await client.query('SELECT * FROM girl_names');
-          const results = { 'results': (result) ? result.rows : null};
-          console.log(result);
-          res.render('/display_names', results );
-          client.release();
-        } catch (err) {
-          console.error(err);
-          res.send("Error " + err);
-        }
+    .get('/round1/mom', function (req, res) {
+        res.render('round1_mom.ejs');
+
+      })
+      .get('/round1/dad', function (req, res) {
+        res.render('round1_dad.ejs');
+
+      })
+      .get('/round2/mom', function (req, res) {
+        res.render('round2_mom.ejs');
+
+      })
+      .get('/round2/dad', function (req, res) {
+        res.render('round2_dad.ejs');
+
+      })
+      .get('/round3/mom', function (req, res) {
+        res.render('round3_mom.ejs');
+
+      })
+      .get('/round3/dad', function (req, res) {
+        res.render('round3_dad.ejs');
+      })
+      .get('/results', function (req, res) {
+        res.render('results.ejs');
       })
     .listen(app.get('port'), function () {
         console.log('Listening on port: ' + app.get('port'));
