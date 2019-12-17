@@ -42,32 +42,130 @@
         }
     </style>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Name Game-Round 1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .row.content {
+            height: 450px
+        }
+
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        }
+    </style>
+</head>
 
 <body>
 
-    <h1>Results</h1>
-    <br>
-    <h2>Here are the results of your name game!</h2>
-    <p>Mom liked the names:</p>
-    <ul>
-        <li>Name</li>
-        <li>Name</li>
-        <li>Name</li>
-    </ul>
-    <p>Dad liked the names:</p>
-    <ul>
-        <li>Name</li>
-        <li>Name</li>
-        <li>Name</li>
-    </ul>
-    <h3>The best name we think you'll love for your child?</h3>
-    <p>Name Last_Name!</p>
-    <br>
-    <br>
-    <br>
-    <form action="/" method="get">
-        <input type="submit" value="Play Game again!">
-    </form>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">NameGame</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <p>Where are you at?</p>
+                <p>Mom-Round 1</p>
+                <p>Dad-Round 1</p>
+                <p>Mom-Round 2</p>
+                <p>Dad-Round 2</p>
+                <p>Mom-Round 3</p>
+                <p>Dad-Round 2</p>
+                <p><b>>Results!</b></p>
+            </div>
+            <div class="col-sm-8 text-left">
+                <h1>Results</h1>
+                <br>
+                <h2>Here are the results of your name game!</h2>
+                <p>Mom liked the names:</p>
+                <ul>
+                    <li>Name</li>
+                    <li>Name</li>
+                    <li>Name</li>
+                </ul>
+                <p>Dad liked the names:</p>
+                <ul>
+                    <li>Name</li>
+                    <li>Name</li>
+                    <li>Name</li>
+                </ul>
+                <h3>The best name we think you'll love for your child?</h3>
+                <p>Name Last_Name!</p>
+                <br>
+                <br>
+                <br>
+                <form action="/" method="get">
+                    <input type="submit" value="Play Game again!">
+                </form>
+            </div>
+            <div class="col-sm-2 sidenav">
+                <div class="well">
+                    <p>ADS</p>
+                </div>
+                <div class="well">
+                    <p>ADS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
+
+</body>
+
+</html>
+
+<body>
+
+
 
     <footer class="container-fluid text-center">
         <p>Footer Text</p>
